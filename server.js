@@ -2,6 +2,8 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const { token, prefix, owner} = require('./config/bot');
+const active = new Map();
+
 
 bot.on('warn', console.warn);
 bot.on('error', console.error);
@@ -23,7 +25,8 @@ bot.on('message', message => {
         delete require.cache[require.resolve(`./commands/${cmd}.js`)];
 
         let ops = {
-            owner: owner
+            owner: owner,
+            active: active
         }
 
         let commandFile = require(`./commands/${cmd}.js`);
