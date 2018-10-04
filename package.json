@@ -1,0 +1,23 @@
+{
+  "name": "discordjs-bot",
+  "version": "1.0.0",
+  "description": "simple discord  bot by hauren",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thehauren/discordjs-bot.git"
+  },
+  "author": "HaureN",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/thehauren/discordjs-bot/issues"
+  },
+  "homepage": "https://github.com/thehauren/discordjs-bot#readme",
+  "dependencies": {
+    "discord.js": "^11.4.2"
+  }
+}
