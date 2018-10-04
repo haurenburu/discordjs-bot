@@ -25,6 +25,7 @@ exports.run = async (bot, message, args, ops) => {
 }
 
 async function play(bot, ops, data){
+    bot.user.setActivity(data.queue[0].songTitle, {type: 'LISTENING'});
     bot.channels.get(data.queue[0].announceChannel).send(`Now playing: ${data.queue[0].songTitle} | Requested by: <@${data.queue[0].requester}>`);
     data.dispatcher = await data.connection.playStream(ytdl(data.queue[0].url, { filter: 'audioonly' }));
     data.dispatcher.guildID = data.guildID;
