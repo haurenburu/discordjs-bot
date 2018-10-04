@@ -1,7 +1,7 @@
 // import stuffs
 const Discord = require('discord.js');
 const bot = new Discord.Client();
-const { token, prefix, owner} = require('./config/bot');
+const { token, prefix, owner} = require('./config');
 const active = new Map();
 
 
