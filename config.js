@@ -1,3 +1,3 @@
 exports.prefix = '!';
-exports.token = '';
-exports.owner = '';
+exports.token = 'your token';
+exports.owner = 'your id';
