@@ -58,7 +58,7 @@ function finish(bot, ops, dispatcher){
         ops.active.set(dispatcher.guildID, fetched);
         play(bot, ops, fetched);
     } else {
-        bot.user.setActivity('Porn', {type: 'WATCHING'});
+        bot.user.setActivity('With Fire', {type: 'PLAYING'});
         ops.active.delete(dispatcher.guildID);
         let vc = bot.guilds.get(dispatcher.guildID).me.voiceChannel;
         if(vc) vc.leave();

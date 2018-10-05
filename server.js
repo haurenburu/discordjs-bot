@@ -15,7 +15,7 @@ bot.on('reconnecting', () => console.log('reconecting...'))
 // console log when bot is ready
 bot.on('ready', async () => {
     console.log('\x1b[36m%s\x1b[0m',`${bot.user.username} is online!`); // log itself
-    bot.user.setActivity('Porn', {type: 'WATCHING'}); // set activity for bot perfil
+    bot.user.setActivity('With Fire', {type: 'PLAYING'}); // set activity for bot perfil
 });
 // watch for chat for commands
 bot.on('message', message => {
