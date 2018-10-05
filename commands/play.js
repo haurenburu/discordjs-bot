@@ -16,7 +16,7 @@ exports.run = async (bot, message, args, ops) => {
         url: args[0],
         announceChannel: message.channel.id
     });
-    message.delete();
+    // message.delete();
     if (!data.dispatcher) play(bot, ops, data);
     else { 
         message.channel.send(`Added for the queue: ${info.title} | requested by: <@${message.author.id}>`)
@@ -42,6 +42,7 @@ function finish(bot, ops, dispatcher){
         ops.active.set(dispatcher.guildID, fetched);
         play(bot, ops, fetched);
     } else {
+        bot.user.setActivity('Porn', {type: 'WATCHING'});
         ops.active.delete(dispatcher.guildID);
         let vc = bot.guilds.get(dispatcher.guildID).me.voiceChannel;
         if(vc) vc.leave();

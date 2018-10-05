@@ -11,7 +11,7 @@ bot.on('disconnect', () => console.log('just disconnected...i wll reconnect soon
 bot.on('reconnecting', () => console.log('reconecting...'))
 bot.on('ready', async () => {
     console.log('\x1b[36m%s\x1b[0m',`${bot.user.username} is online!`);
-    bot.user.setActivity('porn', {type: 'WATCHING'});
+    bot.user.setActivity('Porn', {type: 'WATCHING'});
 });
 bot.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(' ');
