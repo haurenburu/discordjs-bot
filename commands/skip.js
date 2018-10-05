@@ -3,7 +3,7 @@ exports.run = async (bot, message, args, ops) => {
     if (!fetched) return message.reply('Nothing playing...');
     if (message.member.voiceChannel !== message.guild.me.voiceChannel) return message.reply('You aren\'t connected in the same voice channel');
     let userCount = message.member.voiceChannel.members.size;
-    let required = 0;//Math.ceil(userCount/2);
+    let required = 0; //Math.ceil(userCount/2);
     if (!fetched.queue[0].voteSkips) fetched.queue[0].voteSkips = [];
     if (fetched.queue[0].voteSkips.includes(message.member.id)) return message.channel.send(`you already voted! ${fetched.queue[0].voteSkips.length}/${required} required.`);
     fetched.queue[0].voteSkips.push(message.member.id);

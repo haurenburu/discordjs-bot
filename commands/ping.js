@@ -1,4 +1,7 @@
 exports.run = async (bot, message, args) => {
-    const m = await message.channel.send("Ping?");
-    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms`);
+    // mbed for ping
+    message.channel.send({embed: {
+        color: 0x3b88c3,
+        description: `Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(bot.ping)}ms` // cal the ping end send as an embed
+    }});
 }

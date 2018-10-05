@@ -4,7 +4,7 @@ const ms = require('ms');
 exports.run = async(bot, message, args) => {
     let toMute = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!toMute) return message.reply('couldnt find user');
-    if(toMute.hasPermission('MANAGE_MESSAGES')) return message.reply('Cant mute them...');
+    if(toMute.hasPermission('MANAGE_MESSAGES')) return message.reply('You don\'t have permission to do that!');
     let muteRole = message.guild.roles.find(x => x.name === ('Muted'));
     if(!muteRole){
         try{

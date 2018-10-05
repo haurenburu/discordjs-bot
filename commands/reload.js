@@ -1,10 +1,10 @@
 exports.run = async (bot, message, args, ops) => {
-    if(message.author.id !== ops.owner) return message.channel.send('you are not the owner!');
+    if(message.author.id !== ops.owner) return message.reply('You aren\'t the bot owner!');
+    if (!args[0]) return message.reply('Especify the command to be reloaded');
     try{
         delete require.cache[require.resolve(`./${args[0]}.js`)];
     } catch(e) {
-        message.reply(`Unable to reload: ${args[0]}`)
+        return message.reply(`Unable to reload: ${args[0]}`)
     }
     message.reply(`Successfully reloaded: ${args[0]}`)
-     
 }

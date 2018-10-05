@@ -4,7 +4,7 @@ exports.run = async (bot, message, args) => {
         .setAuthor(message.author.username)
         .setDescription("This is the user's info")
         .setThumbnail(message.author.avatarURL)
-        .setColor("#bceaff")
+        .setColor("#3b88c3")
         .addField("Full username", `${message.author.username}#${message.author.discriminator}`)
         .addField("ID", message.author.id)
         .addField("Created At", message.author.createdAt);

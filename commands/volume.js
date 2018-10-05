@@ -5,5 +5,7 @@ exports.run = async (bot, message, args, ops) => {
     if (isNaN(args[0]) || args[0] > 200 || args[0] < 0) return message.reply('Invalid valor (0-200)');
     fetched.dispatcher.setVolume(args[0]/100);
 
-    message.channel.send(`Volume: ${args[0]}/200`)
+    //message.channel.send(`Volume: ${args[0]}/200`)
+    
+    message.channel.send({embed: { color: 0xbceaff, description: "Volume: "+args[0]+"/200" }});
 }
