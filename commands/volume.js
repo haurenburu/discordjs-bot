@@ -7,5 +7,5 @@ exports.run = async (bot, message, args, ops) => {
 
     //message.channel.send(`Volume: ${args[0]}/200`)
     
-    message.channel.send({embed: { color: 0xbceaff, description: "Volume: "+args[0]+"/200" }});
+    message.channel.send({embed: { color: 0x3b88c3, description: "Volume: "+args[0]+"/200" }});
 }

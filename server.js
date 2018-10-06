@@ -21,7 +21,7 @@ bot.on('ready', async () => {
 bot.on('message', message => {
     let args = message.content.slice(prefix.length).trim().split(' '); // split commands and arguments
     let cmd = args.shift().toLowerCase(); // error handling from upper or lower case (CoMmAnD works!)
-    if (message.author.bot) return; // if the message author is a bot just ignore
+    //if (message.author.bot) return; // if the message author is a bot just ignore
     if (!message.content.startsWith(prefix)) return; // if message is not a command (without a prefix or something)
     // try catch for command handlers
     try {

@@ -11,8 +11,6 @@ exports.run = async (bot, message, args, ops) => {
         let commandFile = require('./search');
         return commandFile.run(bot, message, args, ops)
     }
-
-    if (!validate) return message.reply('Invalid music URL');
     let info = await ytdl.getInfo(args[0]);
     let data = ops.active.get(message.guild.id) || {};
     if (!data.connection) data.connection = await message.member.voiceChannel.join();

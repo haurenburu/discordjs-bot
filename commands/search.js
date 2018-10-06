@@ -1,6 +1,6 @@
 const search = require('yt-search');
 exports.run = async (bot, message, args, ops) =>{
-    emojis = [':one:', ':two:', ':three:', ':four:',':five:', ':six:', ':seven:', ':eight: ', ':nine:', ':keycap_ten:']
+    const emojis = [':one:', ':two:', ':three:', ':four:',':five:', ':six:', ':seven:', ':eight: ', ':nine:', ':keycap_ten:']
     
     if (!message.member.voiceChannel) return message.reply('you have to be connected on a voice channel!');
     search(args.join(' '), function (err, res) {
@@ -18,14 +18,12 @@ exports.run = async (bot, message, args, ops) =>{
         const collector = message.channel.createMessageCollector(filter);
         collector.videos = videos;
         
-
-
-
         collector.once('collect', function(m) {
             x.then(sentMessage => sentMessage.delete()); // delete the music list menu
             m.delete();
             let commandFile = require('./play');
             commandFile.run(bot, message, [this.videos[parseInt(m.content)-1].url], ops);
+            console.log(typeof [this.videos[parseInt(m.content)-1].url] +':'+ [this.videos[parseInt(m.content)-1].url]);
         })
     });
 }
