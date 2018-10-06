@@ -35,7 +35,7 @@ exports.run = async (bot, message, args, ops) => {
 }
 
 async function play(bot, ops, data){
-    bot.user.setActivity(data.queue[0].songTitle, {type: 'LISTENING'});
+    // bot.user.setActivity(data.queue[0].songTitle, {type: 'LISTENING'});
     const playMusic = new Discord.RichEmbed() // create new embed
         .setColor('#3b88c3') // left bar color for embed
         .addField('Now Playing',`${data.queue[0].songTitle} | requested by: ${data.queue[0].requester}`);
@@ -56,7 +56,7 @@ function finish(bot, ops, dispatcher){
         ops.active.set(dispatcher.guildID, fetched);
         play(bot, ops, fetched);
     } else {
-        bot.user.setActivity('With Fire', {type: 'PLAYING'});
+        // bot.user.setActivity('?help', {type: 'PLAYING'});
         ops.active.delete(dispatcher.guildID);
         let vc = bot.guilds.get(dispatcher.guildID).me.voiceChannel;
         if(vc) vc.leave();
