@@ -7,3 +7,8 @@ exports.run = async (bot, message, args, ops) => {
     // message.channel.send('Paused!'); 
     message.channel.send({embed: { color: 0x3b88c3, description: "Paused" }}); // send a return to the user saying that " music is paused1"
 }
+exports.help = {
+    name: 'pause',
+    desc: 'pause the music if bot if singing',
+    usage: '?pause'
+}

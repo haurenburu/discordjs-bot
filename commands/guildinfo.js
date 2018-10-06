@@ -13,3 +13,8 @@ exports.run = async (bot, message, args) => {
         .addField('Members', message.guild.memberCount); // create new field with soem information
     return message.channel.send(serverEmbed); // send the embed to the discord channel
 }
+exports.help = {
+    name: 'guildinfo',
+    desc: 'show the guildinfo lol',
+    usage: '?guildinfo'
+}

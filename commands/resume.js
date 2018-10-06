@@ -8,3 +8,8 @@ exports.run = async (bot, message, args, ops) => {
 
     message.channel.send({embed: { color: 0x3b88c3, description: "Resumed" }});
 }
+exports.help = {
+    name: 'resume',
+    desc: 'unpause the music',
+    usage: '?resume'
+}

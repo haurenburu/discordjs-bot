@@ -27,3 +27,8 @@ exports.run = async (bot, message, args, ops) =>{
         })
     });
 }
+exports.help = {
+    name: 'search',
+    desc: 'searchs on youtube for songs then plays (deprecated use ?play instead)',
+    usage: '?search moonlight - xxxtentacion'
+}

@@ -19,3 +19,8 @@ exports.run = async (bot, message, args) => {
     // delete the "generating avatar" message.
     msg.delete();
 }
+exports.help = {
+    name: 'sig',
+    desc: 'show user specified novaRO character',
+    usage: '?sig hauren | ?sig h u a r e n | ?sig hauren (3/5)'
+}

@@ -8,3 +8,8 @@ exports.run = async (bot, message, args, ops) => {
     }
     message.reply(`Successfully reloaded: ${args[0]}`)
 }
+exports.help = {
+    name: 'reload',
+    desc: 'reloads a specified command (bot owner only)',
+    usage: '?reload <play>'
+}

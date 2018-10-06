@@ -50,3 +50,8 @@ exports.run = async (bot, message, args) => {
     }
     
 }
+exports.help = {
+    name: 'time',
+    desc: 'show novaRO time and some events (iam working on it)',
+    usage: '?time'
+}

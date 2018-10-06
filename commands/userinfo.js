@@ -10,3 +10,8 @@ exports.run = async (bot, message, args) => {
         .addField("Created At", message.author.createdAt);
     message.channel.send(embed);
 }
+exports.help = {
+    name: 'userinfo',
+    desc: 'show the user you own info',
+    usage: '?userinfo'
+}

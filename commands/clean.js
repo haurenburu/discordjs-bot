@@ -8,3 +8,8 @@ exports.run = async(bot, message, args) => {
     }
     clear(); // call the async function to delete messages
 }
+exports.help = {
+    name: 'clean',
+    desc: 'clear the last 99 messages from this channel',
+    usage: '?clean'
+}

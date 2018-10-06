@@ -1,7 +1,7 @@
 exports.run = async (bot, message, args, ops) => {
     let quantToMake = args[1] || 1;
-    if (args[2] === 'm') quantToMake *= 12;
-    if (args[1] === 'm') quantToMake = 12;
+    if (args[2] === 'mega') quantToMake *= 12;
+    if (args[1] === 'mega') quantToMake = 12;
     
     
     let foods = {
@@ -119,6 +119,12 @@ exports.run = async (bot, message, args, ops) => {
 
 }
 
+exports.help = {
+    name: 'food',
+    desc: 'calculate the recipe to make +20 foods',
+    usage: '?food <str> | ?food <str> m | ?food <str> <10> | ?food <str> <10> m'
+
+}
 function pad(d) {
     return (d < 10) ? '0' + d.toString() : d.toString();
 }

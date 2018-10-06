@@ -62,3 +62,8 @@ function finish(bot, ops, dispatcher){
         if(vc) vc.leave();
     }
 }
+exports.help = {
+    name: 'play',
+    desc: 'play music if bot is not on channel he will join (playlists is not supported, YET)',
+    usage: '?play moonlight - xxxtentacion | ?play http://youtube.com/watch?v=wJGcwEv7838'
+}

@@ -11,3 +11,6 @@ exports.run = async (bot, message, args, ops) => {
         }
     });    
 }
+exports.help = {
+    name: 'l'
+}

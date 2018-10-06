@@ -9,3 +9,8 @@ exports.run = async (bot, message, args, ops) => {
     
     message.channel.send({embed: { color: 0x3b88c3, description: "Volume: "+args[0]+"/200" }});
 }
+exports.help = {
+    name: 'volume',
+    desc: 'change the music volume (0~200)',
+    usage: '?volume 20 | volume 150'
+}

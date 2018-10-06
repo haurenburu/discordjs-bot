@@ -11,3 +11,8 @@ exports.run = async (bot, message, args) => {
         .addField("Created on", bot.user.createdAt); // get a time when the bot has created
     return message.channel.send(botEmbed); // send the message with a embed
 }
+exports.help = {
+    name: 'botinfo',
+    desc: 'Show the bot info kek',
+    usage: '?botinfo'
+}

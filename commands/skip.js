@@ -17,3 +17,8 @@ exports.run = async (bot, message, args, ops) => {
     message.channel.send(`Successfully voted to skip ${fetched.queue[0].voteSkips.length}/${require} required.`);
 
 }
+exports.help = {
+    name: 'skip',
+    desc: 'skip the current music then plays the next one',
+    usage: 'skip'
+}

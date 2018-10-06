@@ -25,3 +25,8 @@ exports.run = async (bot, message, args, ops) => {
     if(resp !== ' ') message.channel.send(queueEmbed);
 
 }
+exports.help = {
+    name: 'queue',
+    desc: 'show the user a current song queue',
+    usage: '?queue'
+}

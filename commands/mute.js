@@ -35,3 +35,8 @@ exports.run = async(bot, message, args) => {
         message.reply(`<@${toMute.id}> has benn unmuted!`);
     }, ms(muteTime))
 }
+exports.help = {
+    name: 'mute',
+    desc: 'mute a user for <x> time',
+    usage: '?mute <@user> 10ms | ?mute <@user> 10s | ?mute <@user> 10m'
+}

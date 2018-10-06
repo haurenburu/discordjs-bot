@@ -11,3 +11,8 @@ exports.run = async (bot, message, args) => {
      // delete the "generating icon" message.
     msg.delete();
 }
+exports.help = {
+    name: 'icon',
+    desc: 'show the guild icon',
+    usage: '?icon'
+}

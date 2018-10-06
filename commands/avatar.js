@@ -12,3 +12,8 @@ exports.run = async (bot, message, args) => {
     // delete the "generating avatar" message.
     msg.delete();
 }
+exports.help = {
+    name: 'avatar',
+    desc: 'Show the user avatar',
+    usage: '?avatar | ?avatar <@user>' 
+}
