@@ -8,7 +8,12 @@ exports.run = async (bot, message, args, ops) => {
             console.log('Finished playing!');
             dispatcher.destroy();
             message.guild.me.voiceChannel.leave()
+            message.delete();
         });
-    }
-    
+    }   
+}
+exports.help = {
+    name: 'mumbalance',
+    desc: 'enter on voice and say "hello everybody"',
+    usage: '?mumbalance'
 }
