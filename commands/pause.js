@@ -5,7 +5,7 @@ exports.run = async (bot, message, args, ops) => {
     if (fetched.dispatcher.paused) return message.reply('Already paused!'); // check if music is already paused
     fetched.dispatcher.pause(); // pause the music itself
     // message.channel.send('Paused!'); 
-    message.channel.send({embed: { color: 0x3b88c3, description: "Paused" }}); // send a return to the user saying that " music is paused1"
+    message.channel.send({embed: { color: 0x3b88c3, description: ":pause_button: Paused" }}); // send a return to the user saying that " music is paused1"
 }
 exports.help = {
     name: 'pause',

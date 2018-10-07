@@ -6,7 +6,7 @@ exports.run = async (bot, message, args, ops) => {
     if (!fetched.dispatcher.paused) return message.reply('Music isn\'t paused!');
     fetched.dispatcher.resume();
 
-    message.channel.send({embed: { color: 0x3b88c3, description: "Resumed" }});
+    message.channel.send({embed: { color: 0x3b88c3, description: ":arrow_forward: Resumed" }});
 }
 exports.help = {
     name: 'resume',
