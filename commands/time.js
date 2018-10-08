@@ -1,4 +1,9 @@
 exports.run = async (bot, message, args) => {
+    function checkTime(i) {
+        if (i < 10) {i = "0" + i};
+        return i;
+    }
+
     Date.prototype.subTime= function(h,m){
         this.setHours(this.getHours()-h);
         this.setMinutes(this.getMinutes()-m);
@@ -12,10 +17,15 @@ exports.run = async (bot, message, args) => {
     
     let server = new Date().subTime(4, 0);
     let today  = new Date();
+    let h = server.getHours();
+    let m = today.getMinutes();
+    let s = today.getSeconds();
+    let st = today.getHours();
 
-    let h  = checkTime(server.getHours());
-    let m  = checkTime(today.getMinutes());
-    let st = checkTime(today.getHours());
+    h  = checkTime(h);
+    m  = checkTime(m);
+    s  = checkTime(s);
+    st = checkTime(st);
     message.channel.send(":flag_br: "+st+":"+m+":"+s+"\n:flag_ca: "+h+":"+m+":"+s);
     // MONSTER HUNTER HH
     if(h >= 0 && h < 3){
@@ -44,9 +54,4 @@ exports.help = {
     name: 'time',
     desc: 'show novaRO time and some events (iam working on it)',
     usage: '?time'
-}
-
-function checkTime(i) {
-    if (i < 10) {i = "0" + i};
-    return i;
 }
