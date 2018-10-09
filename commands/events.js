@@ -1,12 +1,11 @@
 exports.run = async (bot, message, args) => {
     let time = new Date();
-    let timeServer = time.subTime(4,0)
+    let timeCD = time.subTime(4,0)
     let serverHours = time.getHours();
     let serverMinutes = time.getMinutes();
     let messageContent = '';
     let monsterHunter = [3,9,16,21];
     let slotMachine = [5,11,17,23];
-
 
     if(slotMachine.includes(serverHours)){
         if (serverMinutes >= 0 && serverMinutes < 6) messageContent += `Slot Machine starts in ${6 - serverMinutes} minutes\n`
@@ -30,12 +29,12 @@ exports.run = async (bot, message, args) => {
         else if (serverHours > monsterHunter[3] && serverHours <= 23 ) messageContent += `Monster Hunter happy hour starts in ${fixTime((monsterHunter[3]+3) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
     }
 
-    message.channel.send({embed:{color: 0x3b88c3,title: 'Events', description: messageContent}});
+    message.channel.send({embed:{color: 0x3b88c3,title: 'Events', description: `${fixTime(time.getHours)}:${fixTime(time.getMinutes)}:${fixTime(time.getSeconds)}\n\n${messageContent}`}});
 }
 exports.help = {
-    name: 'time',
+    name: 'events',
     desc: 'show novaRO time and some events (iam working on it)',
-    usage: '?time'
+    usage: '?events'
 }
 
 
