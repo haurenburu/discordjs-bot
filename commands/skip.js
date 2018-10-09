@@ -10,8 +10,8 @@ exports.run = async (bot, message, args, ops) => {
     ops.active.set(message.guild.id, fetched);
 
     if(fetched.queue[0].voteSkips.length >= required){
-        message.channel.send('Skipped!');
-
+        message.channel.send({embed: { color: 0x3b88c3, description: 'Skipped!'}});
+        message.delete();
         return fetched.dispatcher.emit('end');
     }
     message.channel.send(`Successfully voted to skip ${fetched.queue[0].voteSkips.length}/${require} required.`);
