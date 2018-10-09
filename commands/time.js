@@ -1,57 +1,72 @@
 exports.run = async (bot, message, args) => {
-    function checkTime(i) {
-        if (i < 10) {i = "0" + i};
-        return i;
+    let time = new Date();
+    let serverTime = time.subTime(1,0)
+    let serverHours = serverTime.getHours();
+    let serverMinutes = serverTime.getMinutes();
+    let messageContent = '';
+    let monsterHunter = [3,9,16,21];
+    let slotMachine = [5,11,17,23];
+
+
+    if(slotMachine.includes(serverHours)){
+        messageContent += `Slot Machine is Active for ${60 - serverTime.getMinutes()} more minutes\n`;
+    } else {
+        if (serverHours >= 0 && serverHours < slotMachine[0] )                  messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[0]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
+        else if (serverHours > slotMachine[0] && serverHours < slotMachine[1] ) messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[1]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
+        else if (serverHours > slotMachine[1] && serverHours < slotMachine[2] ) messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[2]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
+        else if (serverHours > slotMachine[2] && serverHours < slotMachine[3] ) messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[3]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
+        else if (serverHours > slotMachine[3] && serverHours <= 23 )            messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[3]+3) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
     }
 
-    Date.prototype.subTime= function(h,m){
-        this.setHours(this.getHours()-h);
-        this.setMinutes(this.getMinutes()-m);
-        return this;
+    if(monsterHunter.includes(serverHours)){
+        messageContent += `Monster Hunter Happy hour is Active for ${60 - serverTime.getMinutes()} more minutes\n`;
+    } else {
+        if (serverHours >= 0 && serverHours < monsterHunter[0] ) messageContent +=  `Monster Hunter happy hour starts in ${fixTime((monsterHunter[0]-1) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
+        else if (serverHours > monsterHunter[0] && serverHours < monsterHunter[1] ) messageContent +=  `Monster Hunter happy hour starts in ${fixTime((monsterHunter[1]-1) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
+        else if (serverHours > monsterHunter[1] && serverHours < monsterHunter[2] ) messageContent +=  `Monster Hunter happy hour starts in ${fixTime((monsterHunter[2]-1) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
+        else if (serverHours > monsterHunter[2] && serverHours < monsterHunter[3] ) messageContent +=  `Monster Hunter happy hour starts in ${fixTime((monsterHunter[3]-1) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
+        else if (serverHours > monsterHunter[3] && serverHours <= 23 ) messageContent += `Monster Hunter happy hour starts in ${fixTime((monsterHunter[3]+3) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
     }
-    Date.prototype.addTime= function(h,m){
-        this.setHours(this.getHours()+h);
-        this.setMinutes(this.getMinutes()+m);
-        return this;
-    }
-    
-    let server = new Date().subTime(4, 0);
-    let today  = new Date();
-    let h = server.getHours();
-    let m = today.getMinutes();
-    let s = today.getSeconds();
-    let st = today.getHours();
 
-    h  = checkTime(h);
-    m  = checkTime(m);
-    s  = checkTime(s);
-    st = checkTime(st);
-    message.channel.send(":flag_br: "+st+":"+m+":"+s+"\n:flag_ca: "+h+":"+m+":"+s);
-    // MONSTER HUNTER HH
-    if(h >= 0 && h < 3){
-        message.channel.send(`Monster Hunter starts in ${2-h} hours and ${59-m} minutes`)
-    }
-    
-    else if(h >= 3 && h < 9){
-        if(h < 4) return message.channel.send(`Monster Hunter is on Happy Hour for more ${60-m} minutes`);
-        message.channel.send(`Monster Hunter starts in ${8-h} hours and ${60-m} minutes`)
-    }
-    else if(h >= 9){
-        if(h < 10) return message.channel.send(`Monster Hunter is on Happy Hour for more ${60-m} minutes`);
-        message.channel.send(`Monster Hunter starts in ${15-h} hours and ${60-m} minutes`)
-    }
-    else if(h >= 16){
-        if(h < 17) return message.channel.send(`Monster Hunter is on Happy Hour for more ${60-m} minutes`);
-        message.channel.send(`Monster Hunter starts in ${20-h} hours and ${60-m} minutes`)
-    }
-    else if(h >= 21){
-        if(h < 22) return message.channel.send(`Monster Hunter is on Happy Hour for more ${60-m} minutes`);
-        message.channel.send(`Monster Hunter starts in ${26-h} hours and ${60-m} minutes`)
-    }
-    
+    message.channel.send({embed:{color: 0x3b88c3,title: 'Events', description: messageContent}});
+
 }
 exports.help = {
     name: 'time',
     desc: 'show novaRO time and some events (iam working on it)',
     usage: '?time'
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function fixTime(i) {
+    if (i < 10) {i = "0" + i};
+    return i;
+}
+
+Date.prototype.subTime = function(h,m){
+    this.setHours(this.getHours()-h);
+    this.setMinutes(this.getMinutes()-m);
+    return this;
+}
+Date.prototype.addTime = function(h,m){
+    this.setHours(this.getHours()+h);
+    this.setMinutes(this.getMinutes()+m);
+    return this;
 }
