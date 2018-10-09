@@ -1,15 +1,17 @@
 exports.run = async (bot, message, args) => {
     let time = new Date();
-    let serverTime = time.subTime(1,0)
-    let serverHours = serverTime.getHours();
-    let serverMinutes = serverTime.getMinutes();
+    let timeServer = time.subTime(4,0)
+    let serverHours = time.getHours();
+    let serverMinutes = time.getMinutes();
     let messageContent = '';
     let monsterHunter = [3,9,16,21];
     let slotMachine = [5,11,17,23];
 
 
     if(slotMachine.includes(serverHours)){
-        messageContent += `Slot Machine is Active for ${60 - serverTime.getMinutes()} more minutes\n`;
+        if (serverMinutes >= 0 && serverMinutes < 6) messageContent += `Slot Machine starts in ${6 - serverMinutes} minutes\n`
+        else if (serverMinutes > 5 && serverMinutes < 12) messageContent += `Slot Machine is Active for ${11-serverMinutes} more minutes\n`
+        else if (serverMinutes > 12) messageContent += `Slot Machine starts in ${fixTime((serverHours - slotMachine[0])-1)}:${fixTime((59 - serverMinutes)+5)}\n`
     } else {
         if (serverHours >= 0 && serverHours < slotMachine[0] )                  messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[0]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
         else if (serverHours > slotMachine[0] && serverHours < slotMachine[1] ) messageContent +=  `Slot Machine starts in ${fixTime((slotMachine[1]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}\n`
@@ -29,7 +31,6 @@ exports.run = async (bot, message, args) => {
     }
 
     message.channel.send({embed:{color: 0x3b88c3,title: 'Events', description: messageContent}});
-
 }
 exports.help = {
     name: 'time',
