@@ -12,15 +12,17 @@ exports.run = async (bot, message, args) => {
         else if (serverMinutes > 5 && serverMinutes < 12) messageContent += `Slot Machine is Active for ${11-serverMinutes} more minutes\n`
         else if (serverMinutes > 12) messageContent += `Slot Machine starts in ${fixTime((serverHours - slotMachine[0])-1)}:${fixTime((59 - serverMinutes)+5)}\n`
     } else {
-        if (serverHours >= 0 && serverHours < slotMachine[0] )                  messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[0]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}:${fixTime(59 - time.getSeconds())}**\n`
-        else if (serverHours > slotMachine[0] && serverHours < slotMachine[1] ) messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[1]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}:${fixTime(59 - time.getSeconds())}**\n`
-        else if (serverHours > slotMachine[1] && serverHours < slotMachine[2] ) messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[2]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}:${fixTime(59 - time.getSeconds())}**\n`
-        else if (serverHours > slotMachine[2] && serverHours < slotMachine[3] ) messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[3]-1) - serverHours)}:${fixTime((59 - serverMinutes)+5)}:${fixTime(59 - time.getSeconds())}**\n`
-        else if (serverHours > slotMachine[3] && serverHours <= 23 )            messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[3]+3) - serverHours)}:${fixTime((59 - serverMinutes)+5)}:${fixTime(59 - time.getSeconds())}**\n`
+        let x = fixTime((59 - serverMinutes)+5);
+        if (x >= 59){ serverHours--; x = 60-x; x = fixTime(-x);}
+        if (serverHours >= 0 && serverHours < slotMachine[0] )                  messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[0]-1) - serverHours)}:${x}:${fixTime(59 - time.getSeconds())}**\n`
+        else if (serverHours > slotMachine[0] && serverHours < slotMachine[1] ) messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[1]-1) - serverHours)}:${x}:${fixTime(59 - time.getSeconds())}**\n`
+        else if (serverHours > slotMachine[1] && serverHours < slotMachine[2] ) messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[2]-1) - serverHours)}:${x}:${fixTime(59 - time.getSeconds())}**\n`
+        else if (serverHours > slotMachine[2] && serverHours < slotMachine[3] ) messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[3]-1) - serverHours)}:${x}:${fixTime(59 - time.getSeconds())}**\n`
+        else if (serverHours > slotMachine[3] && serverHours <= 23 )            messageContent +=  `Slot Machine starts in **${fixTime((slotMachine[3]+3) - serverHours)}:${x}:${fixTime(59 - time.getSeconds())}**\n`
     }
 
     if(monsterHunter.includes(serverHours)){
-        messageContent += `Monster Hunter Happy hour is Active for ${60 - serverTime.getMinutes()} more minutes\n`;
+        messageContent += `Monster Hunter Happy hour is Active for ${60 - serverMinutes} more minutes\n`;
     } else {
         if (serverHours >= 0 && serverHours < monsterHunter[0] ) messageContent +=  `Monster Hunter happy hour starts in **${fixTime((monsterHunter[0]-1) - serverHours)}:${fixTime(59 - serverMinutes)}\n`
         else if (serverHours > monsterHunter[0] && serverHours < monsterHunter[1] ) messageContent +=  `Monster Hunter happy hour starts in **${fixTime((monsterHunter[1]-1) - serverHours)}:${fixTime(59 - serverMinutes)}:${fixTime(59 - time.getSeconds())}**\n`
