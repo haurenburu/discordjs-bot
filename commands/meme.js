@@ -18,7 +18,7 @@ exports.run = async (bot, message, args, ops) => {
                 msg += ', '+path.parse(filename).name; // hello
             }
             delaymsg.delete();
-            message.channel.send({embed:{title: 'Meme list', color: 0xffffff, description: 'help' + msg}})
+            message.channel.send({embed:{title: 'Meme list', color: 0x3b88c3, description: 'help' + msg}})
         });
         
     }
