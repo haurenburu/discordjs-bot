@@ -1,7 +1,6 @@
 // exports the command to bot
 exports.run = async (bot, message, args) => {
     if (!args[0]) return message.channel.send({embed:{ color: 0x3b88c3, description: 'Please specify the nickname' }})
-    let msg = await message.channel.send("Generating avatar..."); // send a message while bot download the image
     // let target = args[0]; // check if author of message wants someone's avatar if not, send author's avatar
     let target = args.join('_')
     let indexToSplit = target.indexOf('(');
