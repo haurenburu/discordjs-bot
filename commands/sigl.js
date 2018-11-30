@@ -13,7 +13,7 @@ exports.run = async (bot, message, args) => {
     await message.channel.send(`https://www.novaragnarok.com/ROChargenPHP/newsig/${char}`);
 }
 exports.help = {
-    name: 'sig',
-    desc: 'show user specified novaRO character',
-    usage: '?sig hauren | ?sig h u a r e n | ?sig hauren (3/5)'
+    name: 'sigl',
+    desc: 'show user specified novaRO character with a link',
+    usage: '?sigl hauren | ?sigl h u a r e n | ?sigl hauren (3/5)'
 }

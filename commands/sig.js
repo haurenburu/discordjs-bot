@@ -22,5 +22,5 @@ exports.run = async (bot, message, args) => {
 exports.help = {
     name: 'sig',
     desc: 'show user specified novaRO character',
-    usage: '?sig hauren | ?sig h u a r e n | ?sig hauren (3/5)'
+    usage: '?sig hauren | ?sig hauren (3/5)'
 }
