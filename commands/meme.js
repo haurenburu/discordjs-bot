@@ -22,14 +22,14 @@ exports.run = async (bot, message, args, ops) => {
         });
         
     }
+
+    console.log(meme);
     delaymsg.delete();
     await message.channel.send({files:[
         {
             attachment: `./images/memes/${args[0]}.png`,
         }
     ]})
-    
-
 }
 exports.help = {
     name: 'meme',
