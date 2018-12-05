@@ -4,10 +4,20 @@ exports.run = async (bot, message, args, ops) => {
     var meme = [];
     let msg = '';
     let delaymsg = await message.channel.send('Loading meme...');
+    if(args[0] === 'superhans'){
+        await message.channel.send({files:[
+            {
+                attachment: `./images/memes/superhans.gif`,
+            }
+        ]})
+        delaymsg.delete();
+        return;
+    }
+    
     if(args[0] === 'help'){
         fs.readdir('./images/memes', (err, files) => {
             if(err) console.log(err);
-            let memes = files.filter(f => f.split('.').pop() === 'png');
+            let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif');
             memes.forEach((f,i) => {
                 meme.push(f);
             });
@@ -18,18 +28,17 @@ exports.run = async (bot, message, args, ops) => {
                 msg += ', '+path.parse(filename).name; // hello
             }
             delaymsg.delete();
-            message.channel.send({embed:{title: 'Meme list', color: 0x3b88c3, description: 'help' + msg}})
+            return message.channel.send({embed:{title: 'Meme list', color: 0x3b88c3, description: 'help' + msg}})
         });
         
     }
-
-    console.log(meme);
-    delaymsg.delete();
     await message.channel.send({files:[
         {
             attachment: `./images/memes/${args[0]}.png`,
         }
     ]})
+    delaymsg.delete();
+    
 }
 exports.help = {
     name: 'meme',

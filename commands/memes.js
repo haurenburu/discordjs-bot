@@ -6,7 +6,7 @@ exports.run = async (bot, message, args, ops) => {
     let msg = await message.channel.send('loading meme...');
 
     fs.readdir('./images/memes', (err, files) => {
-        let meme = files.filter(f => f.split('.').pop() === 'png');
+        let meme = files.filter(f => f.split('.').pop() === 'png' || 'gif');
         meme.forEach((f, i) => {
             memes.push(f);
         });
