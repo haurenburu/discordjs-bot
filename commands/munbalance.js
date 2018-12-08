@@ -5,11 +5,10 @@ exports.run = async (bot, message, args, ops) => {
         const dispatcher = connection.playStream('https://www.detrouse.com/mumba.mp3')
         
         dispatcher.on('end', () => {
-            message.delete();
             console.log('Finished playing!');
             dispatcher.destroy();
-            setTimeout(message.guild.me.voiceChannel.leave(), 1000);
-            
+            message.delete();
+            message.guild.me.voiceChannel.leave()
         });
     }   
 }
