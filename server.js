@@ -21,7 +21,7 @@ bot.on('ready', async () => {
     bot.user.setActivity('!help', {type: 'PLAYING'}); // set activity for bot perfil
     
     let h = new Date().getHours();
-    console.log(h);
+    console.log(h-8);
 
     // snowball announcement
     let j = schedule.scheduleJob('45 * * * *', function(){
