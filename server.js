@@ -21,11 +21,12 @@ bot.on('ready', async () => {
     bot.user.setActivity('!help', {type: 'PLAYING'}); // set activity for bot perfil
     
     // snowball announcement
-    let j = schedule.scheduleJob('40 * * * *', function(){
+    let j = schedule.scheduleJob('45 * * * *', function(){
         let guild = bot.guilds.get('495233475050471424');
        
         let event = [1,6,12,18,9]
         let h = new Date().getHours();
+        console.log(h);
 
         if(event.includes(h) && guild && guild.channels.get('515686038916562944')){
             guild.channels.get('515686038916562944').send('@here About 5 minutes to snowball fight!!!');
