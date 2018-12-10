@@ -23,7 +23,7 @@ bot.on('ready', async () => {
     
 
     // snowball announcement
-    let j = schedule.scheduleJob('45 * * * *', function(){
+    let j = schedule.scheduleJob('55 * * * *', function(){
         let guild = bot.guilds.get('495233475050471424');
         let sh = new Date().getHours();
         let h = sh-8;
