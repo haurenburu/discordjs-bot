@@ -28,7 +28,7 @@ bot.on('ready', async () => {
         let h = new Date().getHours();
 
         if(event.includes(h) && guild && guild.channels.get('515686038916562944')){
-            guild.channels.get('515686038916562944').send('@here About 5 minutes to Snowbal fight!!!');
+            guild.channels.get('515686038916562944').send('@here About 5 minutes to snowball fight!!!');
         }
     });
 
