@@ -5,11 +5,12 @@ exports.run = async (bot, message, args) => {
    
     if (message.member.roles.has(Rrole.id)){
         await message.member.removeRole(Rrole.id)
-        message.reply('You will be notified now');
+        message.reply('You will no longer be notified');
+        
     }
     else { 
         await message.member.addRole(Rrole.id)
-        message.reply('You will not be notified now');
+        message.reply('You will be notified');
     }
 
 }
