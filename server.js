@@ -4,6 +4,7 @@ const bot = new Discord.Client(); // create new bot
 const { token, prefix, owner} = require('./config'); // import the config file
 const active = new Map(); // queue for songs
 const fs = require('fs');
+const schedule = require('node-schedule');
 // listiners
 
 // listening for warnings
@@ -17,7 +18,21 @@ bot.on('reconnecting', () => console.log('reconecting...'))
 // console log when bot is ready
 bot.on('ready', async () => {
     console.log('\x1b[36m%s\x1b[0m',`${bot.user.username} is online!`); // log itself
-    bot.user.setActivity('?help', {type: 'PLAYING'}); // set activity for bot perfil
+    bot.user.setActivity('!help', {type: 'PLAYING'}); // set activity for bot perfil
+    
+    // snowball announcement
+    let j = schedule.scheduleJob('40 * * * *', function(){
+        let guild = bot.guilds.get('495233475050471424');
+       
+        let event = [1,6,12,18,9]
+        let h = new Date().getHours();
+
+        if(event.includes(h) && guild && guild.channels.get('515686038916562944')){
+            guild.channels.get('515686038916562944').send('@here About 5 minutes to Snowbal fight!!!');
+        }
+    });
+
+
 });
 // watch for chat for commands
 bot.on('message', message => {
