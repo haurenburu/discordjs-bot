@@ -23,15 +23,15 @@ bot.on('ready', async () => {
     
 
     // snowball announcement
-    let j = schedule.scheduleJob('55 * * * *', function(){
-        let guild = bot.guilds.get('495233475050471424');
+    let j = schedule.scheduleJob('25 * * * *', function(){
+        let guild = bot.guilds.get('292965480254275587');
         let sh = new Date().getHours();
         let h = sh-8;
         console.log(h);
-        let event = [1,6,12,18,4]
+        let event = [0,5,11,17]
 
-        if(event.includes(h) && guild && guild.channels.get('515686038916562944')){
-            guild.channels.get('515686038916562944').send('@here About 5 minutes to snowball fight!!!');
+        if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
+            guild.channels.get('292965480254275587').send('@here About 5 minutes to snowball fight!!!');
         }
     });
 
