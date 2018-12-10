@@ -4,6 +4,8 @@ exports.run = async (bot, message, args, ops) => {
     var meme = [];
     let msg = '';
     let delaymsg = await message.channel.send('Loading meme...');
+    if(!args[0]) return delaymsg.edit('You have to specify a meme...');
+    
     if(args[0] === 'superhans'){
         await message.channel.send({files:[
             {
