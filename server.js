@@ -31,7 +31,7 @@ bot.on('ready', async () => {
         let event = [0,5,11,17]
 
         if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
-            guild.channels.get('292965480254275587').send('@here About 5 minutes to snowball fight!!!');
+            guild.channels.get('292965480254275587').send('<@&521679132484960266> About 5 minutes to snowball fight!!!');
         }
     });
 
