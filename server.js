@@ -28,7 +28,7 @@ bot.on('ready', async () => {
         let sh = new Date().getHours();
         let h = sh-8;
         console.log(h);
-        let event = [0,5,11,17]
+        let event = [0,5,11,17,13]
 
         if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
             guild.channels.get('292965480254275587').send('<@&521679132484960266> About 5 minutes to snowball fight!!!');
