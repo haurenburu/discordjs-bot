@@ -27,13 +27,21 @@ bot.on('ready', async () => {
         let guild = bot.guilds.get('292965480254275587');
         let sh = new Date().getHours();
         let h = sh-8;
+        
         console.log(h);
-        let event = [5,11,17,23]
+        // let event = [5,11,17,23]
+        let event = [1,7,13,19]
 
         if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
             guild.channels.get('292965480254275587').send('<@&521679132484960266> About 5 minutes to snowball fight!!!');
         }
     });
+
+
+
+
+
+
 
 
 });
