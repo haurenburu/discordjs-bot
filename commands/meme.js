@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 exports.run = async (bot, message, args, ops) => {
+    if (message.guild.id !== '292965480254275587') return message.channel.send('This command only works on ND server');
     var meme = [];
     let msg = '';
     let delaymsg = await message.channel.send('Looking for meme...');
