@@ -37,7 +37,7 @@ exports.run = async (bot, message, args, ops) => {
     }
     await message.channel.send({files:[
         {
-            attachment: `./images/memes/${args[0]}.png`,
+            attachment: `./images/memes/${args[0].tolowerCase()}.png`,
         }
     ]})
     delaymsg.delete();
