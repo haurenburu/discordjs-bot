@@ -6,8 +6,11 @@ exports.run = async (bot, message, args, ops) => {
     let msg = '';
     let delaymsg = await message.channel.send('Looking for meme...');
     if(!args[0]) return delaymsg.edit('You have to specify a meme...');
+
+    console.log(args[0]);
+    console.log(args[0].toLowerCase());
     
-    if(args[0].tolowerCase() === 'superhans'){
+    if(args[0] === 'superhans'){
         await message.channel.send({files:[
             {
                 attachment: `./images/memes/superhans.gif`,
@@ -17,7 +20,7 @@ exports.run = async (bot, message, args, ops) => {
         return;
     }
     
-    if(args[0].tolowerCase() === 'help'){
+    if(args[0] === 'help'){
         fs.readdir('./images/memes', (err, files) => {
             if(err) console.log(err);
             let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif');
@@ -37,7 +40,7 @@ exports.run = async (bot, message, args, ops) => {
     }
     await message.channel.send({files:[
         {
-            attachment: `./images/memes/${args[0].tolowerCase()}.png`,
+            attachment: `./images/memes/${args[0]}.png`,
         }
     ]})
     delaymsg.delete();
