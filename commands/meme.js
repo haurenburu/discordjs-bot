@@ -20,7 +20,7 @@ exports.run = async (bot, message, args, ops) => {
         return;
     }
     
-    if(args[0] === 'help'){
+    if(args[0].toLowerCase() === 'help'){
         fs.readdir('./images/memes', (err, files) => {
             if(err) console.log(err);
             let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif');
@@ -40,7 +40,7 @@ exports.run = async (bot, message, args, ops) => {
     }
     await message.channel.send({files:[
         {
-            attachment: `./images/memes/${args[0]}.png`,
+            attachment: `./images/memes/${args[0].toLowerCase()}.png`,
         }
     ]})
     delaymsg.delete();
