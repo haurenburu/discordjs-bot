@@ -10,7 +10,7 @@ exports.run = async (bot, message, args, ops) => {
     console.log(args[0]);
     console.log(args[0].toLowerCase());
     
-    if(args[0] === 'superhans'){
+    if(args[0].toLowerCase() === 'superhans'){
         await message.channel.send({files:[
             {
                 attachment: `./images/memes/superhans.gif`,
