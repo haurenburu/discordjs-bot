@@ -7,7 +7,7 @@ exports.run = async (bot, message, args, ops) => {
     let delaymsg = await message.channel.send('Looking for meme...');
     if(!args[0]) return delaymsg.edit('You have to specify a meme...');
     
-    if(args[0] === 'superhans'){
+    if(args[0].tolowerCase() === 'superhans'){
         await message.channel.send({files:[
             {
                 attachment: `./images/memes/superhans.gif`,
@@ -17,7 +17,7 @@ exports.run = async (bot, message, args, ops) => {
         return;
     }
     
-    if(args[0] === 'help'){
+    if(args[0].tolowerCase() === 'help'){
         fs.readdir('./images/memes', (err, files) => {
             if(err) console.log(err);
             let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif');
