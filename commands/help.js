@@ -1,4 +1,5 @@
 const fs = require('fs');
+const Discord = require('discord.js');
 exports.run = async (bot, message, args, ops) => {
     let botEmbed = new Discord.RichEmbed() // create new embed  
         .setDescription('Bot Information') // this is a description of embed
