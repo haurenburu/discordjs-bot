@@ -23,19 +23,19 @@ bot.on('ready', async () => {
     
 
     // snowball announcement
-    let j = schedule.scheduleJob('25 * * * *', function(){
-        let guild = bot.guilds.get('292965480254275587');
-        let sh = new Date().getHours();
-        let h = sh;
+    // let j = schedule.scheduleJob('25 * * * *', function(){
+    //     let guild = bot.guilds.get('292965480254275587');
+    //     let sh = new Date().getHours();
+    //     let h = sh;
         
-        console.log(h);
-        // let event = [5,11,17,23] //-7 / -3
-        let event = [1,7,13,19]
+    //     console.log(h);
+    //     // let event = [5,11,17,23] //-7 / -3
+    //     let event = [1,7,13,19]
 
-        if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
-            guild.channels.get('292965480254275587').send('<@&521679132484960266> About 5 minutes to snowball fight!!!');
-        }
-    });
+    //     if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
+    //         guild.channels.get('292965480254275587').send('<@&521679132484960266> About 5 minutes to snowball fight!!!');
+    //     }
+    // });
 
 
 
