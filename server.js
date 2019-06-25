@@ -53,7 +53,7 @@ bot.on('message', message => {
     if (message.author.id == "183613168008822785"){
         //return message.channel.send("asdasda");
         message.react('🇷🇺').catch(console.error);
-        return;
+        //return;
     }
     else if (!message.content.startsWith(prefix)) return; // if message is not a command (without a prefix or something)
     // try catch for command handlers
