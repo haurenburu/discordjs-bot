@@ -10,11 +10,7 @@ exports.run = async (bot, message, args, ops) => {
     console.log(args[0]);
     console.log(args[0].toLowerCase());
     
-    if(args[0].toLowerCase() === 'know') {
-        await message.channel.send('https://www.youtube.com/watch?v=gYEShKJzDBY&feature=youtu.be');
-        delaymsg.delete();
-        return;
-    }
+  
     
     if(args[0].toLowerCase() === 'superhans'){
         await message.channel.send({files:[
