@@ -20,9 +20,14 @@ exports.run = async (bot, message, args, ops) => {
         ]})
         delaymsg.delete();
         return;
+    } 
+    
+    else if (args[0].toLowerCase() == 'know'){
+        delaymsg.edit('https://youtu.be/gYEShKJzDBY');
+        return;
     }
     
-    if(args[0].toLowerCase() === 'help'){
+    else if(args[0].toLowerCase() === 'help'){
         fs.readdir('./images/memes', (err, files) => {
             if(err) console.log(err);
             let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif');
@@ -39,13 +44,16 @@ exports.run = async (bot, message, args, ops) => {
             return message.channel.send({embed:{title: 'Meme list', color: 0x3b88c3, description: 'help' + msg}})
         });
         
-    }
+    } else {
+
+    
     await message.channel.send({files:[
         {
             attachment: `./images/memes/${args[0].toLowerCase()}.png`,
         }
-    ]})
-    delaymsg.delete();
+        ]})
+        delaymsg.delete();
+    }
     
 }
 exports.help = {
