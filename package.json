@@ -19,6 +19,6 @@
   "homepage": "https://github.com/thehauren/discordjs-bot#readme",
   "dependencies": {
     "discord.js": "^11.4.2",
-    "node-opus": "^0.3.0",
+    "node-opus": "^0.3.0"
   }
 }
