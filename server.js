@@ -1,3 +1,4 @@
+// something is wrong lol2
 // import stuffs
 const Discord = require('discord.js'); // discordjs modules
 const bot = new Discord.Client(); // create new bot
