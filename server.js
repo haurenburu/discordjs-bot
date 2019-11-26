@@ -5,7 +5,6 @@ const bot = new Discord.Client(); // create new bot
 const { token, prefix, owner} = require('./config'); // import the config file
 const active = new Map(); // queue for songs
 const fs = require('fs');
-const schedule = require('node-schedule');
 // listiners
 
 // listening for warnings
