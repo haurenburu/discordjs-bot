@@ -25,6 +25,14 @@ exports.run = async (bot, message, args, ops) => {
         delaymsg.edit("Ｐｌｅａｓｅ，　ｓｔｏｐ　ｃｒｙｉｎｇ．　Ｉｆ　ｙｏｕ＇ｒｅ　ｒｅａｌｌｙ　ｇｏｏｄ　ａｔ　ｕｓｉｎｇ　Ｓｕｒａ，　ｙｏｕ　ｗｏｎ＇ｔ　ｈａｖｅ　ａ　ｐｒｏｂｌｅｍ　ｂｙ　ｓｔｉｌｌ　ｕｓｉｎｇ　ｉｔ　ｗｈｅｎ　Ｓｎａｐ　ｇｅｔｓ　ｒｅｍｏｖｅｄ．　Ａ　ｊｏｂ　ｄｏｅｓｎ＇ｔ　ｄｉｅ��ｂｅｃａｕｓｅ　ｏｆ　ａ　ｓｉｎｇｌｅ　ｓｋｉｌｌ　ｔｈａｔ　ｂｒｅａｋｓ　ｔｈｅ　ｇａｍｅ．　Ｓｕｒａ＇ｓ　ｉｄｅｎｔｉｔｙ　ｇｏｅｓ　ｍｕｃｈ　ｆｕｒｔｈｅｒ　ｔｈａｎ　ｔｈａｔ．　Ｉｎ　ｔｈｅ　ｌｏｒｅ，　ｔｈｅｙ＇ｒｅ　Ｍｏｎｋｓ　ｔｈａｔ　ｌｅａｒｎｅｄ　ｔｏ　ｄｏｍｉｎａｔｅ　ｔｈｅ　Ｄｅｍｏｎ＇ｓ　Ｐｏｗｅｒ．　Ｓｏ，　ｐｒｏｐｅｒｌｙ　ｔａｌｋｉｎｇ，　ｔｈｅｉｒ　ｍａｉｎ　ｓｋｉｌｌ　ｓｈｏｕｌｄ　ｂｅ　ｃｏｎｓｉｄｅｒｅｄ　Ｇａｔｅｓ　ｏｆ　Ｈｅｌｌ")
         return;
     }
+    else if(args[0].toLowerCase() == 'helitoptero'){
+        delaymsg.edit(`
+            :top:       :top: :top:       :top: :top: 
+            :top: :top: :helicopter: :top: :top: 
+            :top: :top: QUER NAMORAR COMIGO?:top: :top: 
+                   :top: :top:        :top: :top: 
+        `);
+    }
     
     else if (args[0].toLowerCase() == 'know'){
         delaymsg.edit('https://youtu.be/gYEShKJzDBY');
