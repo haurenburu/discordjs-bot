@@ -5,6 +5,7 @@ const bot = new Discord.Client(); // create new bot
 const { token, prefix, owner} = require('./config'); // import the config file
 const active = new Map(); // queue for songs
 const fs = require('fs');
+const schedule = require('node-schedule');
 // listiners
 
 // listening for warnings
@@ -20,22 +21,19 @@ bot.on('ready', async () => {
     console.log('\x1b[36m%s\x1b[0m',`${bot.user.username} is online!`); // log itself
     bot.user.setActivity('!help', {type: 'PLAYING'}); // set activity for bot perfil
     
-    
-
-    // snowball announcement
-    // let j = schedule.scheduleJob('25 * * * *', function(){
-    //     let guild = bot.guilds.get('292965480254275587');
-    //     let sh = new Date().getHours();
-    //     let h = sh;
+    let j = schedule.scheduleJob('25 * * * *', function(){
+         let guild = bot.guilds.get('292965480254275587');
+         let sh = new Date().getHours();
+         let h = sh;
         
-    //     console.log(h);
-    //     // let event = [5,11,17,23] //-7 / -3
-    //     let event = [1,7,13,19]
+         console.log(h);
+         // let event = [5,11,17,23] //-7 / -3
+         let event = [1,7,13,19]
 
-    //     if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
-    //         guild.channels.get('292965480254275587').send('<@&521679132484960266> About 5 minutes to snowball fight!!!');
-    //     }
-    // });
+         if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
+             guild.channels.get('292965480254275587').send('<@&463832479422349312> About 5 minutes to summer event!!!');
+         }
+     });
 
 });
 // watch for chat for commands
