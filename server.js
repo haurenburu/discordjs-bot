@@ -25,13 +25,12 @@ bot.on('ready', async () => {
          let guild = bot.guilds.get('292965480254275587');
          let sh = new Date().getHours();
          let h = sh;
-        
-         console.log(h);
          // let event = [5,11,17,23] //-7 / -3
-         let event = [1,7,13,19]
+         let event = [1,7,13,19] // 4 10 16 22
 
          if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
-             guild.channels.get('292965480254275587').send('<@&463832479422349312> About 5 minutes to summer event!!!');
+             console.log("teste!" + h)
+             //guild.channels.get('292965480254275587').send('<@&463832479422349312> About 5 minutes to summer event!!!');
          }
      });
 
