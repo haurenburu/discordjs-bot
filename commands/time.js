@@ -1,12 +1,20 @@
 const Discord = require('discord.js');
 
 exports.run = async (bot, message, args) => {
+  
+  function addZero(v) {
+    if(v < 10){
+      v = '0'+v;
+    }
+    return v;
+  }
+
   let Rrole = message.guild.roles.find(val => val.name === 'SUMMER');
-  let d = new Date()
+  let d = new Date();
   let h = d.getHours();
   let m = d.getMinutes();
    
-    message.channel.send(d);
+  message.channel.send(addZero(h)+':'+addZero(m));
 
 }
 exports.help = {
