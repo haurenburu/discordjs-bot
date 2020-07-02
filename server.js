@@ -21,12 +21,13 @@ bot.on('ready', async () => {
     console.log('\x1b[36m%s\x1b[0m',`${bot.user.username} is online!`); // log itself
     bot.user.setActivity('!help', {type: 'PLAYING'}); // set activity for bot perfil
     
-    let j = schedule.scheduleJob('25 * * * *', function(){
+    let j = schedule.scheduleJob('55 * * * *', function(){
          let guild = bot.guilds.get('292965480254275587');
          let sh = new Date().getHours();
          let h = sh;
          // let event = [5,11,17,23] //-7 / -3
-         let event = [1,7,13,19] // 4 10 16 22
+        // 4:00/8:00/12:00/16:00/20:00/24:00
+        let event = [3,7,11,15,19,23];
 
          if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
              console.log("teste!" + h)
