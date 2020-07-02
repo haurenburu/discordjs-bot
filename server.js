@@ -31,7 +31,7 @@ bot.on('ready', async () => {
 
          if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
              console.log("teste!" + h)
-             //guild.channels.get('292965480254275587').send('<@&463832479422349312> About 5 minutes to summer event!!!');
+             guild.channels.get('292965480254275587').send('<@&463832479422349312> About 5 minutes to summer event!!!');
          }
      });
 
