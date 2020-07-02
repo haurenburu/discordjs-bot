@@ -6,7 +6,7 @@ exports.run = async (bot, message, args) => {
   let h = d.getHours();
   let m = d.getMinutes();
    
-    message.channel.send(`${h}:${m}`);
+    message.channel.send(d);
 
 }
 exports.help = {
