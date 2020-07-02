@@ -27,7 +27,7 @@ bot.on('ready', async () => {
          let h = sh;
          // let event = [5,11,17,23] //-7 / -3
         // 4:00/8:00/12:00/16:00/20:00/24:00
-        let event = [3,7,11,15,19,23];
+        let event = [2,6,10,14,18,22];
 
          if(event.includes(h) && guild && guild.channels.get('292965480254275587')){
              console.log("teste!" + h)
