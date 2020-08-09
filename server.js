@@ -42,7 +42,7 @@ bot.on('message', message => {
     let cmd = args.shift().toLowerCase(); // error handling from upper or lower case (CoMmAnD works!)
     
     if (message.author.bot) return; // if the message author is a bot just ignore
-    if (message.content == "aids nao existe"){
+    if (message.content.toLowerCase().includes("aids nao existe") || message.content.toLowerCase().includes("aids não existe")){
         message.reply("verdade");
         //return;
     }
