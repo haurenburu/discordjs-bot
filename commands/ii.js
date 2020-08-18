@@ -1,3 +1,5 @@
+const { cookie } = require('../config')
+
 const Discord = require('discord.js');
 const axios = require('axios');
 const cheerio = require('cheerio');
@@ -10,7 +12,7 @@ exports.run = async (bot, message, args, ops) => {
 	let html = await axios.request(`https://www.novaragnarok.com/?module=vending&action=view&id=${args[0]}`,{
 		method: 'get',
 		headers: {
-			Cookie: `fluxSessionData=${process.send.cookie}`
+			Cookie: `fluxSessionData=${cookie}`
 		}
 	})
 	let $ = await cheerio.load(html.data);
