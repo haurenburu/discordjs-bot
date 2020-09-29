@@ -20,7 +20,7 @@ bot.on('reconnecting', () => console.log('reconecting...'))
 bot.on('ready', async () => {
     console.log('\x1b[36m%s\x1b[0m',`${bot.user.username} is online!`); // log itself
     bot.user.setActivity('!help', {type: 'PLAYING'}); // set activity for bot perfil
-    
+  /*   summer is finaly over!
     let j = schedule.scheduleJob('55 * * * *', function(){
          let guild = bot.guilds.get('292965480254275587');
          let sh = new Date().getHours();
@@ -34,7 +34,7 @@ bot.on('ready', async () => {
              guild.channels.get('292965480254275587').send('<@&463832479422349312> About 5 minutes to summer event!!!');
          }
      });
-
+    */
 });
 // watch for chat for commands
 bot.on('message', message => {
