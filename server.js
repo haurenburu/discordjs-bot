@@ -46,7 +46,12 @@ bot.on('message', message => {
         message.reply("verdade");
         //return;
     }
-    else if (!message.content.startsWith(prefix)) return; // if message is not a command (without a prefix or something)
+    if (message.author.id == "97471626597105664"){	
+        message.react('🇷🇺').catch(console.error);
+    }
+    else if (!message.content.startsWith(prefix)) return;
+
+else if (!message.content.startsWith(prefix)) return; // if message is not a command (without a prefix or something)
     // try catch for command handlers
     try {
         delete require.cache[require.resolve(`./commands/${cmd}.js`)];
