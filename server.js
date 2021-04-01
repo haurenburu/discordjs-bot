@@ -46,9 +46,11 @@ bot.on('message', message => {
         message.reply("verdade");
         //return;
     }
+    /*
     if (message.author.id == "97471626597105664"){	
         message.react('🇷🇺').catch(console.error);
     }
+    */
     else if (!message.content.startsWith(prefix)) return;
 
 else if (!message.content.startsWith(prefix)) return; // if message is not a command (without a prefix or something)
