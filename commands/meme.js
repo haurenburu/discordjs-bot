@@ -42,7 +42,7 @@ exports.run = async (bot, message, args, ops) => {
     else if(args[0].toLowerCase() === 'help'){
         fs.readdir('./images/memes', (err, files) => {
             if(err) console.log(err);
-            let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif');
+            let memes = files.filter(f => f.split('.').pop() === 'png' || 'gif' || 'jpg');
             memes.forEach((f,i) => {
                 meme.push(f);
             });
