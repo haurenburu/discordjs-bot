@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 
 exports.run = async (bot, message, args) => {
-    let Rrole = message.guild.roles.find(val => val.name === 'SUMMER');
+    let Rrole = message.guild.roles.find(val => val.name === 'Summer');
    
     if (message.member.roles.has(Rrole.id)){
         await message.member.removeRole(Rrole.id)
