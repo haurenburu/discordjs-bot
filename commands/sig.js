@@ -9,7 +9,11 @@ exports.run = async (bot, message, args) => {
     let argsSig = target.slice(indexToSplit + 1);
     argsSig = argsSig.substring(0, argsSig.length -1);
     let char;
-    target.includes('(') ? char = t1.substring(0, t1.length - 1)+'/'+ argsSig : char = target+'/1/0';
+    if (message.author.id == "183613168008822785") {
+        target.includes('(') ? char = t1.substring(0, t1.length - 1)+'/'+ argsSig : char = target+'/2/0';
+    } else {
+        target.includes('(') ? char = t1.substring(0, t1.length - 1)+'/'+ argsSig : char = target+'/1/0';
+    }
     await message.channel.send({files: [
         {
             attachment: `https://www.novaragnarok.com/ROChargenPHP/newsig/${char}`, // avatar image url
