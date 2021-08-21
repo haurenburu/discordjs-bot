@@ -10,7 +10,7 @@ exports.run = async (bot, message, args) => {
     argsSig = argsSig.substring(0, argsSig.length -1);
     let char;
     if (message.author.id == "183613168008822785") {
-        target.includes('(') ? char = t1.substring(0, t1.length - 1)+'/'+ argsSig : char = target+'/2/0';
+        target.includes('(') ? char = t1.substring(0, t1.length - 1)+'/'+ argsSig : char = target+'/14/0';
     } else {
         target.includes('(') ? char = t1.substring(0, t1.length - 1)+'/'+ argsSig : char = target+'/1/0';
     }
